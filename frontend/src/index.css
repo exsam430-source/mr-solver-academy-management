@@ -1,0 +1,360 @@
+@import "tailwindcss";
+
+/* ═══════════════════════════════════════════════════════════
+   MR SOLVER — DESIGN SYSTEM v2.0
+   Award-winning, god-tier foundation
+   ═══════════════════════════════════════════════════════════ */
+
+@theme {
+  /* ── BRAND PRIMARY (Royal Blue) ── */
+  --color-royal-50:  #eff6ff;
+  --color-royal-100: #dbeafe;
+  --color-royal-200: #bfdbfe;
+  --color-royal-300: #93c5fd;
+  --color-royal-400: #60a5fa;
+  --color-royal-500: #1956A9;
+  --color-royal-600: #0F3C82;
+  --color-royal-700: #0c2f68;
+  --color-royal-800: #0a1f4a;
+  --color-royal-900: #061330;
+  --color-royal-950: #030a1f;
+
+  /* ── BRAND ACCENT (Fiery Orange) ── */
+  --color-flame-50:  #fff7ed;
+  --color-flame-100: #ffedd5;
+  --color-flame-200: #fed7aa;
+  --color-flame-300: #fdba74;
+  --color-flame-400: #FB923C;
+  --color-flame-500: #F06E23;
+  --color-flame-600: #D45A15;
+  --color-flame-700: #b8470d;
+  --color-flame-800: #8a3408;
+  --color-flame-900: #5c2305;
+
+  /* ── GOLD (Premium accents) ── */
+  --color-gold-400: #FFD700;
+  --color-gold-300: #FFB088;
+
+  /* ── INK (Dark surfaces — Night mode) ── */
+  --color-ink-50:  #f8fafc;
+  --color-ink-100: #f1f5f9;
+  --color-ink-200: #e2e8f0;
+  --color-ink-300: #cbd5e1;
+  --color-ink-400: #94a3b8;
+  --color-ink-500: #64748b;
+  --color-ink-600: #475569;
+  --color-ink-700: #334155;
+  --color-ink-800: #1e293b;
+  --color-ink-900: #0f172a;
+  --color-ink-950: #0a1929;
+
+  /* ── SEMANTIC ── */
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-danger:  #ef4444;
+  --color-info:    #3b82f6;
+
+  /* ── FONTS ── */
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-display: "Cal Sans", "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", "Geist Mono", monospace;
+
+  /* ── SHADOWS (Premium, layered) ── */
+  --shadow-glow-royal: 0 0 40px -10px rgba(25, 86, 169, 0.5);
+  --shadow-glow-flame: 0 0 40px -10px rgba(240, 110, 35, 0.5);
+  --shadow-card: 0 4px 6px -1px rgba(15, 23, 42, 0.06), 0 2px 4px -2px rgba(15, 23, 42, 0.04);
+  --shadow-elevated: 0 20px 25px -5px rgba(15, 23, 42, 0.08), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
+  --shadow-floating: 0 25px 50px -12px rgba(15, 23, 42, 0.15);
+
+  /* ── ANIMATION TIMING ── */
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-snap: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   BASE STYLES
+   ═══════════════════════════════════════════════════════════ */
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+html, body {
+  font-family: var(--font-sans);
+  background: #0a1929;
+  color: #f1f5f9;
+  overflow-x: hidden;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+}
+
+body {
+  background:
+    radial-gradient(ellipse 80% 50% at 20% 0%, rgba(25, 86, 169, 0.15), transparent 50%),
+    radial-gradient(ellipse 60% 50% at 80% 100%, rgba(240, 110, 35, 0.12), transparent 50%),
+    #060e1e;
+  min-height: 100vh;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   SCROLLBAR (Premium thin design)
+   ═══════════════════════════════════════════════════════════ */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, rgba(25, 86, 169, 0.4), rgba(240, 110, 35, 0.4));
+  border-radius: 8px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, rgba(25, 86, 169, 0.7), rgba(240, 110, 35, 0.7));
+  background-clip: padding-box;
+}
+
+/* Hide scrollbar utility */
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* ═══════════════════════════════════════════════════════════
+   SELECTION
+   ═══════════════════════════════════════════════════════════ */
+
+::selection {
+  background: rgba(240, 110, 35, 0.3);
+  color: #fff;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   FORM ELEMENTS
+   ═══════════════════════════════════════════════════════════ */
+
+select option {
+  background: #0f1d3a;
+  color: #f1f5f9;
+  padding: 8px;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-text-fill-color: #f1f5f9;
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   PREMIUM UTILITY CLASSES
+   ═══════════════════════════════════════════════════════════ */
+
+/* — Glassmorphism layers — */
+.glass {
+  background: rgba(15, 29, 58, 0.55);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-light {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.glass-strong {
+  background: rgba(10, 25, 41, 0.85);
+  backdrop-filter: blur(40px) saturate(200%);
+  -webkit-backdrop-filter: blur(40px) saturate(200%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* — Gradient text — */
+.text-gradient-brand {
+  background: linear-gradient(135deg, #60a5fa 0%, #FB923C 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.text-gradient-flame {
+  background: linear-gradient(135deg, #FB923C 0%, #F06E23 50%, #D45A15 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.text-gradient-royal {
+  background: linear-gradient(135deg, #93c5fd 0%, #1956A9 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* — Hairline border with gradient — */
+.border-gradient {
+  position: relative;
+  background: linear-gradient(#0f1d3a, #0f1d3a) padding-box,
+              linear-gradient(135deg, rgba(25, 86, 169, 0.5), rgba(240, 110, 35, 0.5)) border-box;
+  border: 1px solid transparent;
+}
+
+/* — Noise texture overlay — */
+.noise::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.025;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* — Aurora background mesh — */
+.aurora-bg {
+  position: relative;
+  overflow: hidden;
+}
+
+.aurora-bg::before {
+  content: "";
+  position: absolute;
+  inset: -50%;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(25, 86, 169, 0.25), transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(240, 110, 35, 0.2), transparent 40%),
+    radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.1), transparent 50%);
+  animation: aurora-drift 20s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* — Grid overlay — */
+.grid-overlay {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+/* — Shimmer (loading) — */
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.02) 0%,
+    rgba(255, 255, 255, 0.08) 50%,
+    rgba(255, 255, 255, 0.02) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.8s ease-in-out infinite;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   KEYFRAMES
+   ═══════════════════════════════════════════════════════════ */
+
+@keyframes aurora-drift {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  33%      { transform: translate(3%, -2%) rotate(2deg); }
+  66%      { transform: translate(-2%, 3%) rotate(-1deg); }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%      { transform: translateY(-8px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(240, 110, 35, 0.3); }
+  50%      { box-shadow: 0 0 40px rgba(240, 110, 35, 0.6); }
+}
+
+@keyframes pulse-ring {
+  0%   { transform: scale(0.95); opacity: 1; }
+  100% { transform: scale(1.6); opacity: 0; }
+}
+
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50%      { background-position: 100% 50%; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideLeft {
+  from { opacity: 0; transform: translateX(20px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* — Animation utilities — */
+.animate-fadeIn     { animation: fadeIn 0.4s var(--ease-smooth) forwards; }
+.animate-slideUp    { animation: slideUp 0.5s var(--ease-snap) forwards; }
+.animate-slideLeft  { animation: slideLeft 0.5s var(--ease-snap) forwards; }
+.animate-scaleIn    { animation: scaleIn 0.4s var(--ease-spring) forwards; }
+.animate-float      { animation: float 4s ease-in-out infinite; }
+.animate-pulse-glow { animation: pulse-glow 2.5s ease-in-out infinite; }
+.animate-gradient   { background-size: 200% 200%; animation: gradient-shift 6s ease infinite; }
+
+/* ═══════════════════════════════════════════════════════════
+   FOCUS RINGS (Accessibility)
+   ═══════════════════════════════════════════════════════════ */
+
+:focus-visible {
+  outline: 2px solid rgba(240, 110, 35, 0.6);
+  outline-offset: 2px;
+  border-radius: 8px;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline-offset: 4px;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   PRINT STYLES (for receipts & admission forms)
+   ═══════════════════════════════════════════════════════════ */
+
+@media print {
+  body { background: white !important; color: black !important; }
+  .no-print { display: none !important; }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   RESPONSIVE TYPE SCALE
+   ═══════════════════════════════════════════════════════════ */
+
+@media (max-width: 640px) {
+  html { font-size: 14px; }
+}
+
+@media (min-width: 1536px) {
+  html { font-size: 16.5px; }
+}

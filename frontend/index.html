@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="theme-color" content="#0a1929" />
+
+    <!-- ============================================
+         PRIMARY META TAGS
+         ============================================ -->
+    <title>Mr Solver Management System | Academy & Student Management</title>
+    <meta name="title" content="Mr Solver Management System | Academy & Student Management" />
+    <meta name="description" content="Complete Academy Management System by Mr Solver - Manage students, teachers, courses, fees, attendance, branches and generate reports. Professional school management software." />
+    <meta name="keywords" content="academy management system, school management software, student management, fees management, attendance system, teacher management, course management, mr solver, mrsolverlearninghub, branch management, mern stack" />
+    <meta name="author" content="Mr Solver Tech & IT Learning Hub" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="language" content="English" />
+
+    <!-- ============================================
+         FAVICONS
+         ============================================ -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
+    <!-- ============================================
+         OPEN GRAPH
+         ============================================ -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://office.mrsolverlearninghub.com/" />
+    <meta property="og:title" content="Mr Solver Management System" />
+    <meta property="og:description" content="Professional Academy & Student Management System" />
+    <meta property="og:site_name" content="Mr Solver Management" />
+
+    <!-- ============================================
+         FONTS
+         ============================================ -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- ============================================
+         INITIAL SPLASH SCREEN
+         ============================================ -->
+    <style>
+      :root { color-scheme: dark; }
+
+      html, body {
+        margin: 0;
+        padding: 0;
+        background: #060e1e;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      #initial-splash {
+        position: fixed;
+        inset: 0;
+        background: radial-gradient(ellipse 80% 60% at 50% -10%, rgba(25, 86, 169, 0.4), transparent 60%),
+                    radial-gradient(ellipse 70% 50% at 90% 100%, rgba(240, 110, 35, 0.25), transparent 60%),
+                    #060e1e;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        z-index: 99999;
+      }
+
+      .splash-logo {
+        width: 100px;
+        height: 100px;
+        border-radius: 24px;
+        background: linear-gradient(135deg, #1956A9, #F06E23);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 24px;
+        box-shadow: 0 20px 60px rgba(25, 86, 169, 0.4);
+        animation: splash-pulse 2s ease-in-out infinite;
+      }
+
+      @keyframes splash-pulse {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+      }
+
+      .splash-logo-text {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 36px;
+        font-weight: 900;
+        color: white;
+      }
+
+      .splash-title {
+        font-size: 24px;
+        font-weight: 800;
+        color: white;
+        margin: 0 0 8px 0;
+      }
+
+      .splash-subtitle {
+        font-size: 12px;
+        font-weight: 700;
+        color: #F06E23;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+        margin: 0 0 24px 0;
+      }
+
+      .splash-dots {
+        display: flex;
+        gap: 8px;
+      }
+
+      .splash-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #1956A9, #F06E23);
+        animation: splash-bounce 1.2s ease-in-out infinite;
+      }
+
+      .splash-dot:nth-child(2) { animation-delay: 0.2s; }
+      .splash-dot:nth-child(3) { animation-delay: 0.4s; }
+
+      @keyframes splash-bounce {
+        0%, 100% { transform: translateY(0); opacity: 0.5; }
+        50% { transform: translateY(-12px); opacity: 1; }
+      }
+
+      #initial-splash.fade-out {
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.5s ease-out;
+      }
+    </style>
+  </head>
+  <body>
+    <noscript>
+      <div style="padding: 40px; text-align: center; color: white; background: #060e1e; min-height: 100vh; display: flex; align-items: center; justify-content: center;">
+        <div>
+          <h1>⚠️ JavaScript Required</h1>
+          <p>Please enable JavaScript to use Mr Solver Management System.</p>
+        </div>
+      </div>
+    </noscript>
+
+    <div id="root"></div>
+
+    <!-- Splash Screen -->
+    <div id="initial-splash">
+      <div class="splash-logo">
+        <span class="splash-logo-text">MS</span>
+      </div>
+      <h1 class="splash-title">Mr Solver Management</h1>
+      <p class="splash-subtitle">✦ Academy System ✦</p>
+      <div class="splash-dots">
+        <div class="splash-dot"></div>
+        <div class="splash-dot"></div>
+        <div class="splash-dot"></div>
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.jsx"></script>
+
+    <script>
+      window.addEventListener('load', function() {
+        setTimeout(function() {
+          var splash = document.getElementById('initial-splash');
+          if (splash) {
+            splash.classList.add('fade-out');
+            setTimeout(function() { splash.remove(); }, 500);
+          }
+        }, 800);
+      });
+    </script>
+  </body>
+</html>
